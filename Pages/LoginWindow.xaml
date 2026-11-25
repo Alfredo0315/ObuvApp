@@ -1,0 +1,34 @@
+<Window x:Class="ObuvApp.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Авторизация — ООО «Обувь»" Height="400" Width="420"
+        MinHeight="380" MinWidth="380"
+        Icon="pack://application:,,,/Icon.ico"
+        WindowStartupLocation="CenterScreen"
+        FontFamily="Times New Roman" FontSize="15"
+        Background="{StaticResource MainBackground}">
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" HorizontalAlignment="Center">
+            <Image Source="pack://application:,,,/Icon.png" Width="80" Height="80"/>
+            <TextBlock Text="ООО «Обувь»" FontSize="22" FontWeight="Bold"
+                       HorizontalAlignment="Center" Margin="0,6,0,0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="0,18,0,0">
+            <TextBlock Text="Логин"/>
+            <TextBox x:Name="LoginBox" Margin="0,3,0,10" Padding="4" TabIndex="0"/>
+            <TextBlock Text="Пароль"/>
+            <PasswordBox x:Name="PasswordInput" Margin="0,3,0,16" Padding="4" TabIndex="1"/>
+            <Button Content="Войти" Style="{StaticResource AccentButton}"
+                    Margin="0" IsDefault="True" Click="Login_Click" TabIndex="2"/>
+            <Button Content="Продолжить как гость" Style="{StaticResource PlainButton}"
+                    Margin="0,8,0,0" Click="Guest_Click" TabIndex="3"/>
+        </StackPanel>
+    </Grid>
+</Window>
